@@ -35,12 +35,8 @@ public class Solution {
         for (File file : files) {
             if (file.isFile() && file.getName().endsWith(".class")) {
 
-//              String name = file.getAbsolutePath().substring(file.getAbsolutePath().indexOf("\\com")).split("[.]")[0];
-//              name = name.replace(File.separatorChar, '.').substring(1);
-//              Class clazz = loader.loadClass(name);
                 String binNameClass = getBinaryNameOfClass(file.toPath());
                 Class clazz = loader.loadClass(binNameClass);
-//              Class clazz = new ClassFromPath().load(binNameClass); //Loading class from path
 
                 // check constructors
                 boolean empty_constr;
@@ -70,16 +66,15 @@ public class Solution {
     }
 
     private String getBinaryNameOfClass(Path filePath) {
-        String binNameClass = null;
         String strFilePath = filePath.toString().replaceAll("[\\\\/]+", ".");
-        String packageName1 = Solution.class.getPackageName();
-        int startIndex = strFilePath.indexOf(packageName1);
+        String pckNm = Solution.class.getPackage().getName();
+        int startIndex = strFilePath.indexOf(pckNm);
         int endIndex = strFilePath.indexOf(".class");
         return strFilePath.substring(startIndex, endIndex);
     }
 
     public HiddenClass getHiddenClassObjectByKey(String key) {
-//        key = key.toLowerCase();
+        key = key.toLowerCase();
         for (Class clazz : hiddenClasses) {
             String name = clazz.getName().toLowerCase();
             if (name.contains(key)) {
@@ -99,19 +94,6 @@ public class Solution {
             }
         }
         return null;
-    }
-
-    public static class ClassFromPath extends ClassLoader {
-        public Class<?> load(Path path, String packageName) {
-            try {
-                String className = packageName + "." + path.getFileName().toString().replace(".class", "");
-                byte[] b = Files.readAllBytes(path);
-                return defineClass(className, b, 0, b.length); //here main magic
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
     }
 }
 
