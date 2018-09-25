@@ -24,11 +24,13 @@ public class Solution {
         while (i < s.length()) {
             ROMAN roman = ROMAN.valueOf(String.valueOf(s.charAt(i)));
             int cArabicCur = getArabic(roman);
+
             int cArabicPrev = -1;
             if (i > 0) {
                 roman = ROMAN.valueOf(String.valueOf(s.charAt(i - 1)));
                 cArabicPrev = getArabic(roman);
             }
+
             int cArabicFwd = -1;
             if (i < s.length() - 1) {
                 roman = ROMAN.valueOf(String.valueOf(s.charAt(i + 1)));
