@@ -13,6 +13,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        // Testing of the implementation
+
         Class clazz = getFactoryClass();
         try {
             Method method = clazz.getMethod("getException", Object.class);
