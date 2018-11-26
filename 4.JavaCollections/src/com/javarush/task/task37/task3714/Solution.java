@@ -9,13 +9,18 @@ import java.io.InputStreamReader;
 */
 public class Solution {
     public static void main(String[] args) throws IOException {
+/*
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Input a roman number to be converted to decimal: ");
         String romanString = bufferedReader.readLine();
         System.out.println("Conversion result equals " + romanToInteger(romanString));
-//        System.out.println("Conversion result equals " + romanToInteger("XCIV")); // 94
-//        System.out.println("Conversion result equals " + romanToInteger("MCMLXXXVIII")); // 1988
-//        System.out.println("Conversion result equals " + romanToInteger("MMMCMXCIX")); // 3999
+*/
+        System.out.println("Conversion result equals " + romanToInteger("XCIV")); // 94
+        System.out.println("Conversion result equals " + romanToInteger("MCMLXXXVIII")); // 1988
+        System.out.println("Conversion result equals " + romanToInteger("MMMCMXCIX")); // 3999
+
+        System.out.println("Conversion result equals " + romanToInteger("MMDCLXXXIII")); // 2683
+        System.out.println("Conversion result equals " + romanToInteger("MCMXCIX")); // 1999
     }
 
     public static int romanToInteger(String s) {

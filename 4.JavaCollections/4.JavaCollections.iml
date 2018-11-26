@@ -20,5 +20,8 @@
     <orderEntry type="library" exported="" name="jaxb-api" level="project" />
     <orderEntry type="library" name="org.slf4j:slf4j-api:1.7.23" level="application" />
     <orderEntry type="library" name="org.slf4j:slf4j-log4j12:1.7.25" level="application" />
+    <orderEntry type="library" name="Libs" level="project" />
+    <orderEntry type="library" name="org.jsoup:jsoup:1.11.3" level="application" />
+    <orderEntry type="library" name="org.jsoup:jsoup:1.9.2" level="application" />
   </component>
 </module>
