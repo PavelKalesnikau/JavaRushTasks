@@ -10,13 +10,13 @@ public class LightBulb implements Switchable {
 
     @Override
     public void turnOff() {
-        System.out.println("The light is shining!");
+        System.out.println("The light has been turned off!");
         on = false;
     }
 
     @Override
     public void turnOn() {
-        System.out.println("The light has been turned off!");
+        System.out.println("The light is shining!");
         on = true;
     }
 }
